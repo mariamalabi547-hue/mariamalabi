@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero-conflict Coaching Calendar — Mariam Alabi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-logo">Mariam <em>Alabi</em></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../work.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <a href="../contact.html" class="nav-cta">Book a Call</a>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <a href="../work.html">Work</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow light">Case Study · Scheduling</div>
+    <h1 class="page-title">A calendar that stopped double-booking itself.</h1>
+    <p class="page-sub">Color-coded time-blocking and a self-serve booking page for a coaching client running back-to-back sessions.</p>
+    <div class="case-meta">
+      <div class="case-meta-item"><div class="label">Client</div><div class="value">1:1 Coaching Practice</div></div>
+      <div class="case-meta-item"><div class="label">Tools</div><div class="value">Google Calendar, Calendly</div></div>
+      <div class="case-meta-item"><div class="label">Role</div><div class="value">Calendar & Scheduling Build</div></div>
+      <div class="case-meta-item"><div class="label">Result</div><div class="value">Zero conflicts</div></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="case-block reveal">
+      <h3>The problem</h3>
+      <p>A coaching client needed a reliable system to manage back-to-back sessions, admin tasks, and personal time — without double-booking clients or losing personal time to work that snuck onto the calendar.</p>
+    </div>
+
+    <div class="case-block reveal reveal-d1">
+      <h3>What I built</h3>
+      <p>A color-coded Google Calendar with time-blocking for meetings, tasks, and deadlines, so every category of time had its own lane and nothing could silently overlap.</p>
+      <div class="case-shot"><img src="https://lh3.googleusercontent.com/d/1MskE5RiPvA2FdWo33TT822XBhM3W0paT" alt="Google Calendar appointment scheduling page"></div>
+      <p class="case-shot-cap">The client-facing appointment page — clients pick a slot directly from the coach's real availability.</p>
+      <p>On top of that, I set up a Calendly page with limited weekly consultation slots for both 1:1 and group sessions, so bookings never had to go through a back-and-forth email thread.</p>
+      <div class="case-shot"><img src="https://lh3.googleusercontent.com/d/1UYbSUg-H0M_PUWm4G2afH7g6mXFxleln" alt="Calendly consultation booking form"></div>
+      <div class="case-shot"><img src="https://lh3.googleusercontent.com/d/1bIybSelQOkyRzSo1kwivLD4Crfg1irT0" alt="Calendly date and time picker"></div>
+      <p class="case-shot-cap">Booking flow: client picks a date, a time, and confirms — no messages exchanged.</p>
+    </div>
+
+    <div class="case-block reveal reveal-d2">
+      <h3>Result</h3>
+      <div class="result-box">
+        <div class="label">Outcome</div>
+        <p>Scheduling conflicts dropped to zero, and manual back-and-forth booking emails were eliminated entirely.</p>
+      </div>
+      <div class="tools-row"><span>Google Calendar</span><span>Calendly</span><span>Time-blocking</span></div>
+    </div>
+
+    <div class="case-nav">
+      <a href="../work.html">← All Work</a>
+      <a href="crm-communication.html">Next: Inbox & CRM →</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Mariam Omowumi Alabi · Executive Virtual Assistant · <a href="mailto:mariamalabi547@gmail.com">mariamalabi547@gmail.com</a></footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

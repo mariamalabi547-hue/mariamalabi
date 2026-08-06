@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Support Ticketing Setup — Mariam Alabi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-logo">Mariam <em>Alabi</em></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../work.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <a href="../contact.html" class="nav-cta">Book a Call</a>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <a href="../work.html">Work</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow light">Case Study · Customer Support</div>
+    <h1 class="page-title">Support tickets that stopped living in someone's inbox.</h1>
+    <p class="page-sub">Setting up Freshdesk and Zendesk so customer questions had a queue, an owner, and a status — instead of a shared inbox nobody fully trusted.</p>
+    <div class="case-meta">
+      <div class="case-meta-item"><div class="label">Client</div><div class="value">Customer-facing Business</div></div>
+      <div class="case-meta-item"><div class="label">Tools</div><div class="value">Freshdesk, Zendesk</div></div>
+      <div class="case-meta-item"><div class="label">Role</div><div class="value">Support Desk Setup</div></div>
+      <div class="case-meta-item"><div class="label">Result</div><div class="value">One ticket queue</div></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="case-block reveal">
+      <h3>The problem</h3>
+      <p>Customer questions were coming in through email, DMs, and web forms with no single place to see what was open, what was answered, and what had gone quiet. Nothing had an owner until someone happened to notice it.</p>
+    </div>
+
+    <div class="case-block reveal reveal-d1">
+      <h3>What I built</h3>
+      <p>I set up Freshdesk as the primary support desk — every inbound question becomes a ticket with a status, priority, and assigned owner, so nothing sits unanswered without someone noticing.</p>
+      <div class="case-shot"><img src="https://lh3.googleusercontent.com/d/1SA9mZy2LYTykpHjkbqkhLe3xJeQJIj4h" alt="Freshdesk support ticket dashboard"></div>
+      <div class="case-shot"><img src="https://lh3.googleusercontent.com/d/1JcYr9KQv2uXR3hPzYPmaudf3AvMaM-6L" alt="Freshdesk ticket detail view"></div>
+      <p class="case-shot-cap">Every inbound question logged as a ticket — status, priority, and owner visible at a glance.</p>
+      <p>For a second client already using Zendesk, I configured the queue and views the same way, so the same discipline applied regardless of which platform the business had already committed to.</p>
+      <div class="case-shot"><img src="https://lh3.googleusercontent.com/d/14DaDxzxdRinu8L5DBlVo4_vhIpH6M-y6" alt="Zendesk support dashboard"></div>
+      <div class="case-shot"><img src="https://lh3.googleusercontent.com/d/1wSlycbEUwTo-HzJtgNWaCUCXKvHpAK26" alt="Zendesk ticket queue"></div>
+    </div>
+
+    <div class="case-block reveal reveal-d2">
+      <h3>Result</h3>
+      <div class="result-box">
+        <div class="label">Outcome</div>
+        <p>Every customer question now lands in one queue with a clear owner and status — nothing depends on someone remembering to check an inbox.</p>
+      </div>
+      <div class="tools-row"><span>Freshdesk</span><span>Zendesk</span><span>Ticket Triage</span></div>
+    </div>
+
+    <div class="case-nav">
+      <a href="data-bookkeeping.html">← Data & Bookkeeping</a>
+      <a href="bookkeeping-records.html">Next: Financial Records →</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Mariam Omowumi Alabi · Executive Virtual Assistant · <a href="mailto:mariamalabi547@gmail.com">mariamalabi547@gmail.com</a></footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

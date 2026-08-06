@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inbox Zero + HubSpot Migration — Mariam Alabi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-logo">Mariam <em>Alabi</em></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../work.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <a href="../contact.html" class="nav-cta">Book a Call</a>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <a href="../work.html">Work</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow light">Case Study · CRM & Inbox</div>
+    <h1 class="page-title">From a buried inbox to zero missed messages.</h1>
+    <p class="page-sub">Rule-based email filters and a full CRM migration, built for a client whose client relationships were slipping through the cracks.</p>
+    <div class="case-meta">
+      <div class="case-meta-item"><div class="label">Client</div><div class="value">Service-based business</div></div>
+      <div class="case-meta-item"><div class="label">Tools</div><div class="value">Gmail Filters, HubSpot</div></div>
+      <div class="case-meta-item"><div class="label">Role</div><div class="value">Inbox & CRM Rebuild</div></div>
+      <div class="case-meta-item"><div class="label">Result</div><div class="value">0 missed emails</div></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="case-block reveal">
+      <h3>The problem</h3>
+      <p>The client's inbox was disorganized, causing slow follow-ups and missed messages. Client contact details lived in scattered notes, not one system anyone could trust.</p>
+    </div>
+
+    <div class="case-block reveal reveal-d1">
+      <h3>What I built</h3>
+      <p>I built filtered, rule-based email folders to sort and prioritize incoming messages automatically, so nothing urgent could sit unread in a crowded inbox.</p>
+      <div class="case-shot"><img src="https://lh3.googleusercontent.com/d/1NidVY1-Cg7aN-d4yoXhug8dZi2SXmWDI" alt="Email management filter and folder system"></div>
+      <p class="case-shot-cap">Filtered inbox system — incoming mail is sorted and prioritized before it's ever manually opened.</p>
+      <p>I then migrated contact tracking into HubSpot CRM, giving the client one place to see every customer's history instead of hunting across email threads.</p>
+      <div class="case-shot"><img src="https://lh3.googleusercontent.com/d/1zEtTOoPdK6GJAyzN9Euv1swPyOW8T3tn" alt="Customer contact list in a CRM tool"></div>
+      <p class="case-shot-cap">Centralized customer records — name, contact info, and status in one searchable table.</p>
+      <div class="case-shot"><img src="https://lh3.googleusercontent.com/d/13Wb7qCAxaq1GZYbDvorH7M2WyEcCmObY" alt="HubSpot CRM dashboard screenshot"></div>
+    </div>
+
+    <div class="case-block reveal reveal-d2">
+      <h3>Result</h3>
+      <div class="result-box">
+        <div class="label">Outcome</div>
+        <p>Response time improved, missed-email incidents dropped to zero, and all client records are now centralized and current.</p>
+      </div>
+      <div class="tools-row"><span>Gmail Filters</span><span>HubSpot CRM</span><span>Contact Migration</span></div>
+    </div>
+
+    <div class="case-nav">
+      <a href="calendar-appointments.html">← Calendar & Scheduling</a>
+      <a href="content-campaigns.html">Next: Content Campaigns →</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Mariam Omowumi Alabi · Executive Virtual Assistant · <a href="mailto:mariamalabi547@gmail.com">mariamalabi547@gmail.com</a></footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
