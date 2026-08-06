@@ -10,13 +10,14 @@
 <style>
   .form-row{margin-bottom:1.1rem;}
   .form-row label{display:block;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
-  .form-row input,.form-row textarea{width:100%;padding:0.75rem 0.9rem;background:rgba(247,249,252,0.06);border:1px solid var(--line);border-radius:5px;color:var(--text-light);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.88rem;outline:none;resize:none;transition:border-color 0.2s;}
-  .form-row input:focus,.form-row textarea:focus{border-color:var(--gold);}
+  .form-row input,.form-row textarea,.form-row select{width:100%;padding:0.75rem 0.9rem;background:rgba(247,249,252,0.06);border:1px solid var(--line);border-radius:5px;color:var(--text-light);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.88rem;outline:none;resize:none;transition:border-color 0.2s;}
+  .form-row select{appearance:none;cursor:pointer;}
+  .form-row input:focus,.form-row textarea:focus,.form-row select:focus{border-color:var(--gold);}
   .form-row input::placeholder,.form-row textarea::placeholder{color:rgba(247,249,252,0.3);}
+  .form-hint{font-size:0.72rem;color:var(--muted);margin-top:5px;}
 </style>
 </head>
 <body>
-
 <nav id="navbar">
   <div class="nav-logo">Mariam <em>Alabi</em></div>
   <ul class="nav-links">
@@ -34,13 +35,11 @@
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
 </div>
-
 <div class="page-hero" style="padding-bottom:6rem;">
   <div class="page-hero-inner">
     <div class="eyebrow light">Get in Touch</div>
     <h1 class="page-title">Let's get your back office off your plate.</h1>
     <p class="page-sub">Tell me what's eating your week and I'll tell you exactly how I'd take it off your hands.</p>
-
     <div class="contact-box" style="margin-top:2.5rem;background:rgba(247,249,252,0.04);border:1px solid var(--line);">
       <div class="contact-left">
         <div class="contact-links">
@@ -49,23 +48,61 @@
           <a href="#" class="contact-link">◎ Manama, Bahrain · Remote worldwide</a>
         </div>
       </div>
-      <div class="contact-form">
-        <div class="form-row"><label>Name</label><input type="text" placeholder="Your name"></div>
-        <div class="form-row"><label>Email</label><input type="email" placeholder="you@company.com"></div>
-        <div class="form-row"><label>What do you need help with?</label><textarea rows="3" placeholder="Calendar, inbox, books, all of it..."></textarea></div>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="submitForm(this)">Send</button>
-      </div>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+        <div class="form-row"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
+
+        <div class="form-row"><label>Email</label><input type="email" name="email" placeholder="you@company.com" required></div>
+
+        <div class="form-row">
+          <label>Phone (optional)</label>
+          <input type="tel" name="phone" placeholder="+973 ...">
+          <div class="form-hint">Only if you'd rather talk by phone than email.</div>
+        </div>
+
+        <div class="form-row">
+          <label>What do you need help with?</label>
+          <select name="service" required>
+            <option value="">Select one...</option>
+            <option>Calendar & Scheduling</option>
+            <option>Inbox & Email Management</option>
+            <option>Bookkeeping & Records</option>
+            <option>CRM & Client Communication</option>
+            <option>Content & Campaign Coordination</option>
+            <option>Workflow Automation</option>
+            <option>Customer Support</option>
+            <option>Something else / Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>Monthly budget range</label>
+          <select name="budget">
+            <option value="">Prefer not to say</option>
+            <option>Under $300/mo</option>
+            <option>$300 – $600/mo</option>
+            <option>$600 – $2,000/mo</option>
+            <option>Let's discuss</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>Tell me a bit more</label>
+          <textarea rows="3" name="message" placeholder="What's eating your week right now?" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send</button>
+      </form>
     </div>
   </div>
 </div>
-
 <footer>© 2026 Mariam Omowumi Alabi · Executive Virtual Assistant · <a href="mailto:mariamalabi547@gmail.com">mariamalabi547@gmail.com</a></footer>
-
 <script>
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  function submitForm(btn){ btn.textContent = 'Sent ✓'; setTimeout(()=>{btn.textContent='Send';},2500); }
 </script>
 </body>
 </html>
