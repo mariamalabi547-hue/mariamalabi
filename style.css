@@ -121,3 +121,13 @@ footer a{color:var(--accent);}
   .case-meta{grid-template-columns:1fr 1fr;}
   .contact-box{grid-template-columns:1fr;padding:2.4rem 5%;}
 }
+
+.section-cream{background:var(--cream);}
+.section-cream .kicker{color:var(--accent-deep);}
+.section-cream .kicker::before{background:var(--accent-deep);}
+.section-cream .section-heading{color:var(--cream-text);}
+.section-cream .section-lede{color:#5C5648;}
+.section-cream .work-card{background:#fff;border-color:rgba(16,14,11,0.1);}
+.section-cream .work-card-title{color:var(--cream-text);}
+.section-cream .work-card-desc{color:#6B6558;}
+.section-cream .work-card-tag{color:var(--accent-deep);}
